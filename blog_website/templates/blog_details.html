@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+      {% block title%}
+    <title>Blog Details</title>
+      {% endblock title%}
+<!--        <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--          <div class="container-fluid">-->
+<!--            <a class="navbar-brand" href="/">Noipunno</a>-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--              <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--              <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link active" aria-current="page" href="/">Home</a>-->
+<!--                </li>-->
+<!--                {% if user.is_authenticated %}-->
+<!--                  <li class="nav-item">-->
+<!--                  <a class="nav-link" href="/">{{request.user}}</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="/post_blog">Post Blog</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link " href="/edit/{{blog.id}}">Edit Blog</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="/delete/{{blog.id}}">Delete Blog</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="logout">Logout</a>-->
+<!--                </li>-->
+<!--                {% else %}-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="register">Register</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link " href="login">Login</a>-->
+<!--                </li>-->
+<!--                {% endif %}-->
+<!--              </ul>-->
+<!--              <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </nav>-->
+{% block body%}
+<div class="container py-3">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+          <b>posted-By:   {{blog.user_id.username}}</b>
+        <h6 class="card-subtitle mb-2 text-muted ">{{blog.date}}</h6>
+        <p class="card-text">{{blog.desc}}</p>
+      </div>
+    </div>
+</div>
+
+{% endblock body%}

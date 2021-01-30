@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+      {% block title%}
+    <title>Register</title>
+
+      {% endblock title%}
+
+{% block body%}
+
+    {% for message in messages%}
+        <div class="alert alert-primary" role="alert">
+            {{message}}
+        </div>
+    {% endfor %}
+
+    <h1 class="text-center my-4">Register Form</h1>
+<div class="container" py-3>
+      <form class="row g-3" action="register" method="POST">
+          {% csrf_token %}
+          <div class="col-md-6">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Arjun">
+          </div>
+          <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Baidya">
+          </div>
+          <div class="col-12">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Baidya">
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="abc@gmail.com">
+          </div>
+          <div class="col-md-6">
+            <label for="pass1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="****">
+          </div>
+          <div class="col-md-6">
+            <label for="pass2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="****">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign-Up</button>
+          </div>
+      </form>
+</div>
+
+    {% endblock body%}
